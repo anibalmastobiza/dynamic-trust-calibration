@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Bayesian Trust Calibration in AI-Assisted Medical Decision
+  Making</title>
+      <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+      <div class="container">
+          <header>
+              <h1>Research Study: AI Trust in Healthcare</h1>
+              <p class="subtitle">Bayesian Trust Calibration in AI-Assisted
+  Medical Decision Making</p>
+          </header>
+
+          <!-- Study Information Page -->
+          <div id="info-page" class="page active">
+              <div class="content-section">
+                  <h2>Study Information</h2>
+                  <p>You are being invited to participate in a research
+  study investigating how healthcare professionals update their trust in AI
+  diagnostic systems based on new evidence.</p>
+
+                  <h3>What will you do?</h3>
+                  <ul>
+                      <li>Review medical scenarios with AI diagnostic
+  recommendations</li>
+                      <li>Rate your trust in AI recommendations across
+  different contexts</li>
+                      <li>Make decisions about treatment
+  recommendations</li>
+                      <li>Complete questionnaires about your background and
+  attitudes</li>
+                  </ul>
+
+                  <h3>Duration</h3>
+                  <p>Approximately 15-20 minutes</p>
+
+                  <h3>Eligibility</h3>
+                  <ul>
+                      <li>18+ years old</li>
+                      <li>Fluent in English</li>
+                      <li>Experience in healthcare or medical
+  decision-making (professional or personal)</li>
+                  </ul>
+
+                  <div class="button-container">
+                      <button class="btn btn-primary" 
+  onclick="nextPage('consent-page')">Continue to Consent</button>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Consent Page -->
+          <div id="consent-page" class="page">
+              <div class="content-section">
+                  <h2>Informed Consent</h2>
+
+                  <div class="consent-text">
+                      <h3>Purpose</h3>
+                      <p>This study investigates how people update their
+  trust in AI medical systems using Bayesian inference principles.</p>
+
+                      <h3>Procedures</h3>
+                      <p>You will review medical scenarios, rate AI system
+  trustworthiness, and make decisions about treatment recommendations.</p>
+
+                      <h3>Risks and Benefits</h3>
+                      <p>No significant risks are anticipated. Benefits
+  include contributing to safer AI implementation in healthcare.</p>
+
+                      <h3>Confidentiality</h3>
+                      <p>Your responses are completely anonymous. No
+  personally identifiable information will be collected or stored.</p>
+
+                      <h3>Voluntary Participation</h3>
+                      <p>Participation is voluntary. You may withdraw at any
+   time without penalty.</p>
+
+                      <h3>Contact Information</h3>
+                      <p>For questions about this research, contact:
+  [Research Team Contact]</p>
+                  </div>
+
+                  <div class="checkbox-group">
+                      <label class="checkbox-container">
+                          <input type="checkbox" id="consent-understand" 
+  required>
+                          <span class="checkmark"></span>
+                          I understand the purpose and procedures of this
+  study
+                      </label>
+
+                      <label class="checkbox-container">
+                          <input type="checkbox" id="consent-voluntary" 
+  required>
+                          <span class="checkmark"></span>
+                          I understand that participation is voluntary
+                      </label>
+
+                      <label class="checkbox-container">
+                          <input type="checkbox" id="consent-anonymous" 
+  required>
+                          <span class="checkmark"></span>
+                          I understand that my responses will be anonymous
+                      </label>
+
+                      <label class="checkbox-container">
+                          <input type="checkbox" id="consent-agree" 
+  required>
+                          <span class="checkmark"></span>
+                          I consent to participate in this research study
+                      </label>
+                  </div>
+
+                  <div class="button-container">
+                      <button class="btn btn-secondary" 
+  onclick="previousPage('info-page')">Back</button>
+                      <button class="btn btn-primary" 
+  onclick="validateConsent()">Continue</button>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Demographics Page -->
+          <div id="demographics-page" class="page">
+              <div class="content-section">
+                  <h2>Background Information</h2>
+                  <p>Please provide some background information. All
+  responses are anonymous.</p>
+
+                  <div class="form-group">
+                      <label for="age">Age:</label>
+                      <select id="age" required>
+                          <option value="">Select age range</option>
+                          <option value="18-24">18-24</option>
+                          <option value="25-34">25-34</option>
+                          <option value="35-44">35-44</option>
+                          <option value="45-54">45-54</option>
+                          <option value="55-64">55-64</option>
+                          <option value="65+">65+</option>
+                      </select>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="gender">Gender:</label>
+                      <select id="gender" required>
+                          <option value="">Select gender</option>
+                          <option value="Male">Male</option>
+                          <option value="Female">Female</option>
+                          <option value="Non-binary">Non-binary</option>
+                          <option value="Prefer not to say">Prefer not to
+  say</option>
+                          <option value="Other">Other</option>
+                      </select>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="education">Highest Education:</label>
+                      <select id="education" required>
+                          <option value="">Select education level</option>
+                          <option value="High school">High school</option>
+                          <option value="Bachelor's degree">Bachelor's
+  degree</option>
+                          <option value="Master's degree">Master's
+  degree</option>
+                          <option value="Doctoral degree">Doctoral
+  degree</option>
+                          <option value="Medical degree">Medical
+  degree</option>
+                          <option value="Other professional degree">Other
+  professional degree</option>
+                      </select>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="healthcare-role">Healthcare Role:</label>
+                      <select id="healthcare-role" required>
+                          <option value="">Select your role</option>
+                          <option value="Physician">Physician</option>
+                          <option value="Nurse">Nurse</option>
+                          <option value="Healthcare 
+  administrator">Healthcare administrator</option>
+                          <option value="Medical student">Medical
+  student</option>
+                          <option value="Nursing student">Nursing
+  student</option>
+                          <option value="Healthcare researcher">Healthcare
+  researcher</option>
+                          <option 
+  value="Patient/caregiver">Patient/caregiver</option>
+                          <option value="Other healthcare 
+  professional">Other healthcare professional</option>
+                          <option value="No healthcare experience">No
+  healthcare experience</option>
+                      </select>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="ai-experience">Experience with
+  AI/Technology:</label>
+                      <select id="ai-experience" required>
+                          <option value="">Select experience level</option>
+                          <option value="Very low">Very low</option>
+                          <option value="Low">Low</option>
+                          <option value="Moderate">Moderate</option>
+                          <option value="High">High</option>
+                          <option value="Very high">Very high</option>
+                      </select>
+                  </div>
+
+                  <div class="button-container">
+                      <button class="btn btn-secondary" 
+  onclick="previousPage('consent-page')">Back</button>
+                      <button class="btn btn-primary" 
+  onclick="validateDemographics()">Continue to Study</button>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Instructions Page -->
+          <div id="instructions-page" class="page">
+              <div class="content-section">
+                  <h2>Study Instructions</h2>
+
+                  <div class="instructions">
+                      <h3>What You'll Do</h3>
+                      <p>In this study, you'll review medical scenarios
+  where an AI system provides diagnostic recommendations. Your task is
+  to:</p>
+
+                      <ol>
+                          <li><strong>Review each medical case</strong> -
+  Read patient symptoms and medical history</li>
+                          <li><strong>Examine AI recommendations</strong> -
+  See what the AI system suggests and its confidence level</li>
+                          <li><strong>Rate your trust</strong> - Indicate
+  how much you trust the AI's recommendation</li>
+                          <li><strong>Make decisions</strong> - Choose
+  whether you would follow the AI's recommendation</li>
+                          <li><strong>Update your opinion</strong> - See
+  additional evidence and update your trust rating</li>
+                      </ol>
+
+                      <h3>Key Points</h3>
+                      <ul>
+                          <li>There are no "right" or "wrong" answers - we
+  want your honest opinions</li>
+                          <li>AI confidence levels represent the system's
+  uncertainty about its recommendation</li>
+                          <li>You can change your trust ratings as you see
+  new evidence</li>
+                          <li>Consider both the AI's recommendation and your
+   own medical knowledge/experience</li>
+                      </ul>
+
+                      <div class="example-box">
+                          <h4>Example Trust Scale</h4>
+                          <p>You'll use a scale from 0 (completely distrust)
+   to 100 (complete trust)</p>
+                          <div class="scale-example">
+                              <span>0</span>
+                              <span>25</span>
+                              <span>50</span>
+                              <span>75</span>
+                              <span>100</span>
+                          </div>
+                          <div class="scale-labels">
+                              <span>No Trust</span>
+                              <span>Low Trust</span>
+                              <span>Moderate Trust</span>
+                              <span>High Trust</span>
+                              <span>Complete Trust</span>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="button-container">
+                      <button class="btn btn-secondary" 
+  onclick="previousPage('demographics-page')">Back</button>
+                      <button class="btn btn-primary" 
+  onclick="startScenarios()">Start Study</button>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Scenario Pages (will be generated dynamically) -->
+          <div id="scenario-container" class="page">
+              <!-- Scenarios will be inserted here by JavaScript -->
+          </div>
+
+          <!-- Post-Study Questionnaire -->
+          <div id="questionnaire-page" class="page">
+              <div class="content-section">
+                  <h2>Final Questions</h2>
+
+                  <div class="form-group">
+                      <label>How did your trust in the AI system change
+  throughout the study?</label>
+                      <div class="radio-group">
+                          <label><input type="radio" name="trust-change" 
+  value="decreased" required> Decreased significantly</label>
+                          <label><input type="radio" name="trust-change" 
+  value="slightly-decreased" required> Decreased slightly</label>
+                          <label><input type="radio" name="trust-change" 
+  value="unchanged" required> Remained the same</label>
+                          <label><input type="radio" name="trust-change" 
+  value="slightly-increased" required> Increased slightly</label>
+                          <label><input type="radio" name="trust-change" 
+  value="increased" required> Increased significantly</label>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label>What factors most influenced your trust in the
+  AI system?</label>
+                      <div class="checkbox-group">
+                          <label><input type="checkbox" name="trust-factors"
+   value="accuracy"> AI's accuracy rate</label>
+                          <label><input type="checkbox" name="trust-factors"
+   value="confidence"> AI's confidence level</label>
+                          <label><input type="checkbox" name="trust-factors"
+   value="explanation"> Quality of explanations</label>
+                          <label><input type="checkbox" name="trust-factors"
+   value="consistency"> Consistency across cases</label>
+                          <label><input type="checkbox" name="trust-factors"
+   value="complexity"> Complexity of the case</label>
+                          <label><input type="checkbox" name="trust-factors"
+   value="experience"> My own experience</label>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="ai-healthcare-opinion">Overall, how do you
+   feel about AI use in healthcare?</label>
+                      <select id="ai-healthcare-opinion" required>
+                          <option value="">Select your opinion</option>
+                          <option value="very-positive">Very
+  positive</option>
+                          <option value="positive">Positive</option>
+                          <option value="neutral">Neutral</option>
+                          <option value="negative">Negative</option>
+                          <option value="very-negative">Very
+  negative</option>
+                      </select>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="comments">Additional comments
+  (optional):</label>
+                      <textarea id="comments" rows="4" placeholder="Any 
+  additional thoughts about the study or AI in healthcare..."></textarea>
+                  </div>
+
+                  <div class="button-container">
+                      <button class="btn btn-primary" 
+  onclick="completeStudy()">Complete Study</button>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Completion Page -->
+          <div id="completion-page" class="page">
+              <div class="content-section">
+                  <h2>Study Complete</h2>
+                  <p>Thank you for participating in our research study!</p>
+
+                  <div class="completion-info">
+                      <h3>What happens next?</h3>
+                      <p>Your responses have been recorded anonymously and
+  will contribute to research on AI trust calibration in healthcare
+  settings.</p>
+
+                      <h3>Questions?</h3>
+                      <p>If you have any questions about this research,
+  please contact our research team.</p>
+                  </div>
+
+                  <div class="button-container">
+                      <button class="btn btn-primary" 
+  onclick="redirectToProlific()">Return to Prolific</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <script src="script.js"></script>
+  </body>
+  </html>
